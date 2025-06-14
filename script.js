@@ -115,13 +115,17 @@ function startGame() {
 startGame(); // call initially
 // Mobile button control
 document.querySelectorAll('.arrow').forEach(button => {
-  button.addEventListener('click', () => {
+  // Respond instantly on mobile with touchstart, fallback to click
+  const handleDirection = () => {
     const dir = button.getAttribute('data-dir');
     if (dir === 'LEFT' && direction !== 'RIGHT') direction = 'LEFT';
     if (dir === 'RIGHT' && direction !== 'LEFT') direction = 'RIGHT';
     if (dir === 'UP' && direction !== 'DOWN') direction = 'UP';
     if (dir === 'DOWN' && direction !== 'UP') direction = 'DOWN';
 
-    initializeAudio(); // ensure music starts
-  });
+    initializeAudio(); // optional audio init
+  };
+
+  button.addEventListener('touchstart', handleDirection);
+  button.addEventListener('click', handleDirection); // fallback for desktop
 });
