@@ -52,3 +52,28 @@ canvas {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.mobile-controls {
+  margin-top: 20px;
+  display: none; /* Shown only on mobile */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-controls button {
+  background-color: #0f0;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 5px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .mobile-controls {
+    display: flex;
+  }
+}
