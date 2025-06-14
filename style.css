@@ -54,11 +54,11 @@ canvas {
 }
 
 .mobile-controls {
-  margin-top: 20px;
-  display: none; /* Shown only on mobile */
+ display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .mobile-controls button {
@@ -72,8 +72,3 @@ canvas {
   cursor: pointer;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .mobile-controls {
-    display: flex;
-  }
-}
