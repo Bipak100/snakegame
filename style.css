@@ -79,6 +79,7 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
 }
 
 .mobile-controls button {
